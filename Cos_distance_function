@@ -1,0 +1,10 @@
+!pip install -U sentence-transformers
+from sentence_transformers import SentenceTransformer
+from scipy import spatial
+
+model = SentenceTransformer('bert-base-nli-mean-tokens')
+
+def cos_sim(main_sentence: str, other_sent: str) -> float:
+  main_sentence_embeddings, other_sentence_embeddings = model.encode((main_sentence,other_sent))
+  cos_dist = 1 - spatial.distance.cosine(main_sentence_embeddings, other_sentence_embeddings)
+  return cos_dist
