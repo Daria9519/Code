@@ -1,1 +1,1 @@
-Here you may find different parts of code from my projects.
+Forecasting customer default based on tabular data using CatBoost, XgBoost, fast.ai, TabNet.
